@@ -1,7 +1,6 @@
-from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
+from . import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('bible_verses.urls')),
+    path('api/bible-verses/', views.BibleVerseList.as_view(), name='bible-verse-list'),
 ]
